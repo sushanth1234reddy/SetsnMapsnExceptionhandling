@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="dadjokestab.jpeg" type="image/x-icon">
+    <title>Dad Jokes</title>
+</head>
+<body>
+    <button id="btn">Generate Joke</button>
+    <script>
+        let btn=document.getElementById("btn");
+        btn.addEventListener("click",()=>{
+            async function genJokes(){
+                let data=await fetch("https://icanhazdadjoke.com");// try another url for dad jokes
+                let inn=await data.json();
+                console.log(inn);
+            }
+            genJokes();
+        })
+    </script>
+</body>
+</html>
